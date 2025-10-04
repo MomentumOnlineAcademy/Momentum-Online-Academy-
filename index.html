@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum Online Academy | Empowering individuals to unlock their full potential and achieve success through expert-led classes and training courses</title>
+    <meta name="description" content="Momentum Online Academy offers tutoring, online courses, and study support to help students achieve their educational goals.">
+    <meta name="author" content="Momentum Online Academy">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<!-- Navigation Bar (hidden on home, accessible via menu button) -->
+<nav class="navbar" id="main-navbar" style="display: none;">
+    <div class="container">
+        <a href="index.html" class="logo">Momentum Online Academy</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="tutors.html">Tutors</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- Menu Button to show navbar -->
+<button id="menu-btn" aria-label="Open navigation" class="menu-btn" tabindex="0">
+    <span class="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
+    <span class="menu-text">Menu</span>
+</button>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navbar = document.getElementById('main-navbar');
+    let menuOpen = false;
+
+    menuBtn.onclick = function() {
+        menuOpen = !menuOpen;
+        navbar.style.display = menuOpen ? 'block' : 'none';
+        menuBtn.classList.toggle('open', menuOpen);
+    };
+
+    menuBtn.onkeydown = function(e) {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            menuBtn.click();
+        }
+    };
+</script>
+<style>
+.menu-btn {
+    background: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s;
+    font-size: 1rem;
+}
+.menu-btn:focus {
+    outline: 2px solid #0078d4;
+}
+.menu-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    position: relative;
+}
+.menu-icon .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #333;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+.menu-btn.open .menu-icon .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.menu-btn.open .menu-icon .bar:nth-child(2) {
+    opacity: 0;
+}
+.menu-btn.open .menu-icon .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+.menu-text {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+</style>
+
+<script>
+    document.getElementById('menu-btn').onclick = function() {
+        var navbar = document.getElementById('main-navbar');
+        navbar.style.display = navbar.style.display === 'none' ? 'block' : 'none';
+    };
+</script>
+
+<!-- Header / Hero -->
+<header class="hero">
+    <div class="container">
+        <h1>Momentum Online Academy</h1>
+        <p>Empowering individuals to unlock their full potential and achieve success through expert-led classes and training courses.</p>
+        <button class="btn-primary" onclick="window.location.href='courses.html'" style="display:inline-block; font-size:1.15em; font-weight:bold; padding:0.8em 2em; background:#0078d4; color:#fff; border:none; border-radius:6px; box-shadow:0 2px 8px rgba(0,120,212,0.12); cursor:pointer; margin-top:1em; transition:background 0.2s;">
+            Browse Courses
+        </button>
+    </div>
+</header>
+
+<!-- What We Offer -->
+<section class="offer">
+    <div class="container">
+        <h2>What We Offer</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Tutoring Services</h3>
+                <p>Personalized tutoring to help students excel in their studies.</p>
+                <a href="tutors.html" class="btn-secondary offer-btn">Meet Tutors</a>
+            </div>
+            <div class="card">
+                <h3>Online Courses</h3>
+                <p>Interactive courses designed for flexible and effective learning.</p>
+                <a href="courses.html" class="btn-secondary offer-btn">View Courses</a>
+            </div>
+            <div class="card">
+                <h3>Study Support</h3>
+                <p>Resources and guidance to support academic achievement.</p>
+                <a href="about.html" class="btn-secondary offer-btn">Explore Resources</a>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .offer .cards .offer-btn {
+        background: #0078d4;
+        color: #fff !important;
+        font-weight: bold;
+        border-radius: 8px;
+        padding: 0.9em 2em;
+        font-size: 1.12em;
+        box-shadow: 0 4px 16px rgba(0,120,212,0.18);
+        border: none;
+        display: inline-block;
+        margin-top: 1em;
+        transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+    }
+    .offer .cards .offer-btn:hover,
+    .offer .cards .offer-btn:focus {
+        background: #005fa3;
+        color: #fff;
+        transform: translateY(-2px) scale(1.07);
+        box-shadow: 0 8px 32px rgba(0,120,212,0.25);
+        outline: 2px solid #0078d4;
+    }
+</style>
+
+<!-- Featured Courses -->
+<section class="featured-courses">
+    <div class="container">
+        <h2 style="font-size:2.2em; color:#0078d4; text-align:center; margin-bottom:1em;">🌟 Featured Courses 🌟</h2>
+        <div class="course-list" style="display:flex; gap:2em; flex-wrap:wrap; justify-content:center;">
+            <div class="course-item" style="background:#f5faff; border:2px solid #0078d4; border-radius:14px; box-shadow:0 4px 24px rgba(0,120,212,0.10); padding:2em 1.5em; flex:1 1 260px; min-width:260px; max-width:340px; text-align:center; transition:transform 0.2s;">
+                <h3 style="color:#005fa3; font-size:1.35em; margin-bottom:0.7em;">Online Teaching</h3>
+                <p style="font-size:1.08em; color:#333;">Learn how to create engaging online lessons, manage virtual classrooms, and connect with students remotely.</p>
+                <a href="courses.html" class="btn-secondary btn-learn-more">Learn More</a>
+            </div>
+            <div class="course-item" style="background:#f5faff; border:2px solid #0078d4; border-radius:14px; box-shadow:0 4px 24px rgba(0,120,212,0.10); padding:2em 1.5em; flex:1 1 260px; min-width:260px; max-width:340px; text-align:center; transition:transform 0.2s;">
+                <h3 style="color:#005fa3; font-size:1.35em; margin-bottom:0.7em;">Makeup 101: From Basics to Bold</h3>
+                <p style="font-size:1.08em; color:#333;">Master the fundamentals of makeup and learn how to create stunning, bold looks that enhance your natural beauty.</p>
+                <a href="courses.html" class="btn-secondary btn-learn-more">Learn More</a>
+            </div>
+            <div class="course-item" style="background:#f5faff; border:2px solid #0078d4; border-radius:14px; box-shadow:0 4px 24px rgba(0,120,212,0.10); padding:2em 1.5em; flex:1 1 260px; min-width:260px; max-width:340px; text-align:center; transition:transform 0.2s;">
+                <h3 style="color:#005fa3; font-size:1.35em; margin-bottom:0.7em;">Computer Basics</h3>
+                <p style="font-size:1.08em; color:#333;">Learn essential computer skills for the digital age.</p>
+                <a href="courses.html" class="btn-secondary btn-learn-more">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    .featured-courses {
+        margin: 3em 0 2em 0;
+        padding: 1em 0 2em 0;
+        background: linear-gradient(90deg, #e3f0ff 0%, #f5faff 100%);
+        box-shadow: 0 6px 32px rgba(0,120,212,0.07);
+    }
+    .featured-courses .course-list .course-item:hover {
+        transform: translateY(-6px) scale(1.04);
+        box-shadow: 0 8px 32px rgba(0,120,212,0.18);
+        border-color: #005fa3;
+    }
+    .btn-learn-more {
+        background: #0078d4;
+        color: #fff !important;
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 0.7em 1.5em;
+        font-size: 1.08em;
+        box-shadow: 0 2px 8px rgba(0,120,212,0.12);
+        border: none;
+        display: inline-block;
+        margin-top: 0.7em;
+        transition: background 0.2s, transform 0.2s;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 0.5px;
+    }
+    .btn-learn-more:hover,
+    .btn-learn-more:focus {
+        background: #005fa3;
+        color: #fff;
+        transform: translateY(-2px) scale(1.05);
+        outline: 2px solid #0078d4;
+    }
+    @media (max-width: 900px) {
+        .featured-courses .course-list {
+            flex-direction: column;
+            gap: 1.5em;
+        }
+        .featured-courses .course-list .course-item {
+            max-width: 100%;
+        }
+    }
+</style>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Students Say</h2>
+      <div class="testimonial-list">
+        <blockquote>
+          "Momentum Online Academy helped me boost my grades and confidence!"<br>
+          <span>- Alex, Grade 10</span>
+        </blockquote>
+        <blockquote>
+          "The tutors are amazing and the resources are super helpful."<br>
+          <span>- Priya, College Student</span>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Momentum Online Academy</a>
+                <p class="footer-desc">Empowering individuals to unlock their full potential and achieve success through expert-led classes and training courses.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="tutors.html">Tutors</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email: <a href="mailto:yourdigitalco786@gmail.com">yourdigitalco786@gmail.com</a></li>
+                    <li>Phone: <a href="tel:0651994305">065 199 4305</a></li>
+                    <li>Location: Online Worldwide</li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://www.tiktok.com/@yazy76" target="_blank" class="social-link">
+    <i class="fab fa-tiktok"></i> TikTok
+  </a>
+                <a href="https://www.instagram.com/__yasmin_sayed__" target="_blank" class="social-link">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 Momentum Online Academy. All rights reserved.</p>
+            <p>
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<style>
+    .site-footer {
+        background: #222;
+        color: #eee;
+        font-size: 1rem;
+        margin-top: 2em;
+    }
+    .footer-top {
+        border-bottom: 1px solid #444;
+        padding: 2em 0 1em 0;
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2em;
+        align-items: flex-start;
+    }
+    .footer-brand .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 0.5em;
+        display: inline-block;
+    }
+    .footer-desc {
+        margin: 0.5em 0 0 0;
+        color: #bbb;
+        font-size: 0.95em;
+    }
+    .footer-links h4,
+    .footer-contact h4,
+    .footer-social h4 {
+        margin-bottom: 0.5em;
+        font-size: 1.1em;
+        color: #fff;
+    }
+    .footer-links ul,
+    .footer-contact ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-links ul li,
+    .footer-contact ul li {
+        margin-bottom: 0.4em;
+    }
+    .footer-links a,
+    .footer-contact a {
+        color: #eee;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-links a:hover,
+    .footer-contact a:hover {
+        color: #0078d4;
+    }
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    .footer-social .social-icon {
+        display: inline-block;
+        margin-right: 0.5em;
+        vertical-align: middle;
+    }
+    .footer-social img {
+        width: 28px;
+        height: 28px;
+        filter: brightness(0) invert(1);
+        transition: filter 0.2s;
+    }
+    .footer-social .social-icon:hover img {
+        filter: brightness(0) invert(0.5) sepia(1) hue-rotate(180deg) saturate(2);
+    }
+    .footer-bottom {
+        background: #181818;
+        padding: 1em 0;
+        text-align: center;
+        font-size: 0.95em;
+        color: #bbb;
+    }
+    .footer-bottom a {
+        color: #eee;
+        text-decoration: underline;
+        margin: 0 0.3em;
+        transition: color 0.2s;
+    }
+    .footer-bottom a:hover {
+        color: #0078d4;
+    }
+    @media (max-width: 700px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5em;
+        }
+        .footer-top {
+            padding: 1.5em 0 0.5em 0;
+        }
+    }
+</style>
+</body>
+</html>

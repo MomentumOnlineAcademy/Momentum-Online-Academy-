@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Momentum Online Academy Courses</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" >
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(120deg, #e3e6ee 0%, #f4f6fa 100%);
+            margin: 0;
+            color: #222;
+            min-height: 100vh;
+        }
+        .body-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 2rem auto 0 auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(13,71,161,0.10);
+        }
+        header {
+            background: #0d47a1;
+            color: #fff;
+            padding: 2.5rem 0 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(13,71,161,0.08);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        header p {
+            font-size: 1.15rem;
+            margin-top: 0.5rem;
+            color: #e3e6ee;
+        }
+        .search-bar {
+            margin: 2rem auto 1rem auto;
+            max-width: 520px;
+            display: flex;
+            gap: 0.5rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(13,71,161,0.05);
+            padding: 0.5rem 1rem;
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #bfc8e2;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #f4f6fa;
+        }
+        .search-bar button {
+            padding: 0.75rem 1.5rem;
+            background: #1565c0;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(13,71,161,0.07);
+            transition: background 0.2s;
+        }
+        .search-bar button:hover {
+            background: #0d47a1;
+        }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .course-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(13,71,161,0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border: 1px solid #e3e6ee;
+        }
+        .course-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(13,71,161,0.14);
+            border-color: #bfc8e2;
+        }
+        .course-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #e3e6ee;
+        }
+        .course-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .course-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1565c0;
+            letter-spacing: 0.5px;
+        }
+        .course-desc {
+            flex: 1;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #444;
+        }
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.97rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .enroll-btn {
+            background: #0d47a1;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(13,71,161,0.07);
+            transition: background 0.2s;
+        }
+        .enroll-btn:hover {
+            background: #1565c0;
+        }
+        @media (max-width: 600px) {
+            .courses-grid {
+                padding: 1rem;
+                gap: 1rem;
+            }
+            .course-content {
+                padding: 1rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Our Advanced Courses</h1>
+        <p>Explore, learn, and master new skills with our curated selection of courses.</p>
+    </header>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search courses...">
+        <button onclick="filterCourses()">Search</button>
+    </div>
+    <section class="courses-grid" id="coursesGrid">
+        <!-- Example course cards -->
+        <div class="course-card" data-title="Online Teaching">
+            <img class="course-image" src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Web Development">
+            <div class="course-content">
+                <div class="course-title">Online Teaching (Includes Certification Assistance)</div>
+                <div class="course-desc">Unlock Your Teaching Potential:
+Learn how to create engaging online lessons, manage virtual classrooms, and connect with students remotely.
+Course Highlights:
+    - Effective online teaching strategies
+    - Classroom management techniques
+    - Building student relationships online
+    - Creating interactive digital content.</div>
+                <div class="course-meta">
+                    <span>Duration: +-3 hrs</span>
+                    <span>Price: R500</span>
+                </div>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+        </div>
+        <div class="course-card" data-title="Makeup 101: From Basics to Bold">
+            <img class="course-image" src="https://images.unsplash.com/photo-1602532381225-eec578361933?q=80&w=1115&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Data Science">
+            <div class="course-content">
+                <div class="course-title">Makeup 101: From Basics to Bold (Includes Certification Upon Completion)</div>
+                <div class="course-desc">Master the fundamentals of makeup and learn how to create stunning, bold looks that enhance your natural beauty.
+Course Highlights:
+    - Understanding skin tones and types
+    - Basic makeup techniques (foundation, eyeshadow, eyeliner, etc)
+    - Creating everyday and dramatic looks
+    - Product knowledge and recommendations.</div>
+                <div class="course-meta">
+                    <span>Duration: +-4 hrs</span>
+                    <span>Price: R750</span>
+                </div>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+        </div>
+        <div class="course-card" data-title="Remote Jobs">
+            <img class="course-image" src="https://images.unsplash.com/photo-1584722065451-922e4d176e53?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="UI/UX Design">
+            <div class="course-content">
+                <div class="course-title">Remote Jobs (Includes Certification Upon Completion)</div>
+                <div class="course-desc">Work from Anywhere: 
+Discover the world of remote jobs and learn how to find, apply and thrive in flexible, location independent careers.
+Course Highlights:
+    - Types of remote jobs and industries
+    - Building a remote work mindset
+    - Job search strategies and resources
+    - Time management and productivity tips</div>
+                <div class="course-meta">
+                    <span>Duration: 3 hrs</span>
+                    <span>Price: R500</span>
+                </div>
+                <button class="enroll-btn">Enroll Now</button>
+            </div>
+        </div>
+        <div class="course-card" data-title="Computer Basics">
+            <img class="course-image" src="https://images.unsplash.com/photo-1603025832572-c5ba1fb6be8b?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cybersecurity">
+            <div class="course-content">
+                <div class="course-title">Computer Basics (Includes Certification Upon Completion)</div>
+                <div class="course-desc">Get Comfortable with Technology: 
+Learn the fundamentals of computers and gain confidence in using technology for personal and professional purposes.
+Course Highlights:
+    - Basic computer hardware and software
+    - Navigating operating systems 
+    - Essential software applications (Microsoft Office, Google Suite, etc.)
+    - Online safety and security best practices.</div>
+                <div class="course-meta">
+                    <span>Duration: +-2 hrs</span>
+                    <span>Price: R500</span>
+                </div>
+                <button class="enroll-btn" onclick="location.href='contact.html'">Enroll Now</button>
+            </div>
+        </div>
+        <div class="course-card" data-title="Nail Course">
+            <img class="course-image" src="https://images.unsplash.com/photo-1612887390768-fb02affea7a6?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cybersecurity">
+            <div class="course-content">
+                <div class="course-title">Nail Course (Includes Certification Upon Completion)</div>
+                <div class="course-desc">Nail Mastery: From Basics to Brilliance
+                                            Unlock Your Nail Potential: Learn the art of nail care and design with our comprehensive course, covering everything from basic manicures to intricate nail art
+                                            Course Highlights:
+                                        - Gel and soft gel application techniques
+                                        - Basic manicure and pedicure techniques
+                                        - Nail shaping, buffing, and polishing
+                                        - Nail art techniques (stamping, freehand etc)
+                                        - Sanitation and safety protocols
+                                        - Product knowledge and recommendations.</div>
+                <div class="course-meta">
+                    <span>Duration: +-2 hrs</span>
+                    <span>Price: R600</span>
+                </div>
+                <button class="enroll-btn" onclick="location.href='contact.html'">Enroll Now</button>
+            </div>
+        </div>
+        <div class="course-card" data-title="Lash Course">
+            <img class="course-image" src="https://images.unsplash.com/photo-1735151226446-1d364b4adc2f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cybersecurity">
+            <div class="course-content">
+                <div class="course-title">Lash Course (Includes Certification Upon Completion)</div>
+                <div class="course-desc">Lash Luxe: Mastering the Art of Eyelash Extensions
+                                            Enhance Your Lash Skills: Learn the techniques and best practices for applying eyelash extensions, from classic to volume lashes.
+                                        Course Highlights:
+                                        - Lash anatomy and health
+                                        - Classic lash application techniques
+                                        - Volume lash application techniques
+                                        - Lash removal and aftercare
+                                        - Sanitation and safety protocols
+                                        - Product knowledge and recommendations
+                                        - Business skills for lash artists (marketing, client retention etc).</div>
+                <div class="course-meta">
+                    <span>Duration: +-2 hrs</span>
+                    <span>Price: R600</span>
+                </div>
+                <button class="enroll-btn" onclick="location.href='contact.html'">Enroll Now</button>
+            </div>
+        </div>
+        <!-- Add more courses as needed -->
+    </section>
+    <script>
+        function filterCourses() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.course-card');
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title').toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        document.getElementById('searchInput').addEventListener('keyup', filterCourses);
+    </script>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Momentum Online Academy</a>
+                <p class="footer-desc">Empowering individuals to unlock their full potential and achieve success through expert-led classes and training courses.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="tutors.html">Tutors</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email: <a href="mailto:yourdigitalco786@gmail.com">yourdigitalco786@gmail.com</a></li>
+                    <li>Phone: <a href="tel:0651994305">065 199 4305</a></li>
+                    <li>Location: Online Worldwide</li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://www.tiktok.com/@yazy76" target="_blank" class="social-link">
+    <i class="fab fa-tiktok"></i> TikTok
+  </a>
+                <a href="https://www.instagram.com/__yasmin_sayed__" target="_blank" class="social-link">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 Momentum Online Academy. All rights reserved.</p>
+            <p>
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<style>
+    .site-footer {
+        background: #222;
+        color: #eee;
+        font-size: 1rem;
+        margin-top: 2em;
+    }
+    .footer-top {
+        border-bottom: 1px solid #444;
+        padding: 2em 0 1em 0;
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2em;
+        align-items: flex-start;
+    }
+    .footer-brand .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 0.5em;
+        display: inline-block;
+    }
+    .footer-desc {
+        margin: 0.5em 0 0 0;
+        color: #bbb;
+        font-size: 0.95em;
+    }
+    .footer-links h4,
+    .footer-contact h4,
+    .footer-social h4 {
+        margin-bottom: 0.5em;
+        font-size: 1.1em;
+        color: #fff;
+    }
+    .footer-links ul,
+    .footer-contact ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-links ul li,
+    .footer-contact ul li {
+        margin-bottom: 0.4em;
+    }
+    .footer-links a,
+    .footer-contact a {
+        color: #eee;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-links a:hover,
+    .footer-contact a:hover {
+        color: #0078d4;
+    }
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    .footer-social .social-icon {
+        display: inline-block;
+        margin-right: 0.5em;
+        vertical-align: middle;
+    }
+    .footer-social img {
+        width: 28px;
+        height: 28px;
+        filter: brightness(0) invert(1);
+        transition: filter 0.2s;
+    }
+    .footer-social .social-icon:hover img {
+        filter: brightness(0) invert(0.5) sepia(1) hue-rotate(180deg) saturate(2);
+    }
+    .footer-bottom {
+        background: #181818;
+        padding: 1em 0;
+        text-align: center;
+        font-size: 0.95em;
+        color: #bbb;
+    }
+    .footer-bottom a {
+        color: #eee;
+        text-decoration: underline;
+        margin: 0 0.3em;
+        transition: color 0.2s;
+    }
+    .footer-bottom a:hover {
+        color: #0078d4;
+    }
+    @media (max-width: 700px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5em;
+        }
+        .footer-top {
+            padding: 1.5em 0 0.5em 0;
+        }
+    }
+</style>
+</body>
+
+</html>

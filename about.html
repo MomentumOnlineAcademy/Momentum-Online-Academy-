@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Academy Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            background: #f6f8fa;
+            color: #222;
+        }
+        header {
+            background: #1a237e;
+            color: #fff;
+            padding: 40px 0 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(30, 34, 60, 0.08);
+            padding: 40px 32px;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 18px;
+            color: #1a237e;
+            font-weight: 700;
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+        }
+        .about-text {
+            flex: 2;
+            min-width: 260px;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-image img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(30, 34, 60, 0.12);
+        }
+        .values-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .value-card {
+            background: #e3e7fd;
+            border-radius: 8px;
+            padding: 18px 16px;
+            flex: 1 1 220px;
+            min-width: 180px;
+            box-shadow: 0 2px 8px rgba(30, 34, 60, 0.06);
+        }
+        .value-card h3 {
+            margin: 0 0 8px 0;
+            color: #283593;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        .value-card p {
+            margin: 0;
+            font-size: 0.98rem;
+            color: #333;
+        }
+        .team-section {
+            margin-top: 48px;
+        }
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-top: 18px;
+        }
+        .team-member {
+            background: #f0f4ff;
+            border-radius: 8px;
+            padding: 16px;
+            flex: 1 1 180px;
+            min-width: 160px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(30, 34, 60, 0.04);
+        }
+        .team-member img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        .team-member h4 {
+            margin: 0 0 6px 0;
+            font-size: 1.05rem;
+            color: #1a237e;
+            font-weight: 700;
+        }
+        .team-member p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #444;
+        }
+        @media (max-width: 700px) {
+            .about-content, .values-list, .team-list {
+                flex-direction: column;
+                gap: 18px;
+            }
+            .container {
+                padding: 24px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Our Academy</h1>
+        <p>Empowering learners to achieve excellence through innovation and collaboration.</p>
+    </header>
+    <div class="container">
+        <section>
+            <div class="section-title">Who We Are</div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Welcome to Momentum Online Academy, where learning meets innovation and creativity. Founded in 2025, our academy is dedicated to providing world-class education and training in various fields, including technology, science, and the arts.
+                    </p>
+                    <p>
+                        Our mission is to nurture talent, foster creativity and build a community where learners can thrive and grow.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="Academy Team">
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">Our Values</div>
+            <div class="values-list">
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>We strive for the highest standards in teaching, learning, and personal growth.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We embrace new ideas and technologies to keep our curriculum relevant and impactful.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Collaboration</h3>
+                    <p>We foster teamwork and community, believing that we learn best together.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Inclusivity</h3>
+                    <p>We welcome learners from all backgrounds and celebrate diversity in our academy.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Our Mission</h3>
+                    <p>At Momentum Online Academy, our aim is to provide individuals with affordable courses that help them grow and thrive without having to break the bank. We believe that quality education should be accessible to everyone, regardless of their financial situation. Our mission is to bridge the gap between learners and industry experts, providing high-quality education at an affordable price.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Our Courses</h3>
+                    <p>At Momentum Online Academy, we offer a range of courses designed to equip you with the skills and knowledge you need to succeed.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Certification</h3>
+                    <p>Upon successful completion of our courses, you will receive a certification that recognizes your new skills and knowledge. This certification can be a valuable addition to your resume or portfolio, demonstrating your expertise to potential employers or clients.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Our Tutors</h3>
+                    <p>Our tutors are industry experts and passionate educators who are dedicated to providing high-quality education and training.</p>
+                </div>
+            </div>
+        <section>
+            <div class="section-title">Our team includes</div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        - Qualified Educator: 
+                        A qualified educator with a BA in Education and Psychology and 20 years of teaching experience, providing tutoring for kids from Grade 4-7 in Maths, English, Afrikaans and Natural Science.
+                    </p>
+                    <p>
+                        - TEFL Educator and Online Coach: 
+                        A qualified TEFL educator and online coach with expertise in teaching English as a foreign language and coaching online educators.
+                    </p>
+                    <p>
+                        - Makeup Artist: 
+                        A qualified makeup artist with extensive experience in makeup techniques and trends.
+                    </p>
+                    <p>
+                        - IT Technician: 
+                        A qualified IT technician with expertise in computer systems, software, networking and coding.
+                    </p>
+                    <p>
+                        - Nail Artist: 
+                        A qualified nail artist with expertise in nail care, design and art.
+                    </p>
+                    <p>
+                        - Lash Technician: A qualified lash technician with expertise in eyelash extensions and application techniques.    
+                    </p>
+                    <p>
+                        - Remote Job Specialist: A qualified remote job specialist with expertise in helping individuals find and secure remote job opportunities.    
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Academy Team">
+                </div>
+            </div>
+        </section>
+        <section class="team-section">
+            <div class="section-title">Why Choose Us?</div>
+            <div class="team-list">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1611403570720-162d8829689a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="- Affordable prices:">
+                    <h4>- Affordable prices:</h4>
+                    <p>We believe that quality education should be accessible to everyone, which is why we offer our courses at an affordable price.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1738854869537-454e7e63a33b?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="- Practical, hands-on experience:">
+                    <h4>- Practical, hands-on experience:</h4>
+                    <p>Our courses are designed to provide you with practical, hands-on experience alongside theoretical knowledge.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1511629091441-ee46146481b6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="- Expert tutors:">
+                    <h4>- Expert tutors:</h4>
+                    <p>Our tutors are industry experts and passionate educators who are dedicated to helping you achieve your goals.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1615044806063-cf09a17b1a04?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="- Flexible learning:">
+                    <h4>- Flexible learning:</h4>
+                    <p>Our online courses are designed to fit around your schedule, allowing you to learn at your own pace.</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1553073520-80b5ad5ec870?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="- Community support:">
+                    <h4>- Community support:</h4>
+                    <p>We foster a sense of community among our learners, providing support and guidance every step of the way.</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="section-title">Join Us</div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Join Momentum Online Academy today and start achieving your goals.
+                    </p>
+                    <p>
+                        Whether you're looking to advance your career, learn new skills or pursue a new passion, we have the courses and support you need to succeed.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="site-footer">
+        <div class="container" style="text-align: center; padding: 20px 0;">
+            &copy; 2024 Momentum Online Academy. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

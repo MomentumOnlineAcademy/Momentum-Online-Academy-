@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Momentum Online Academy</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(120deg, #184fa7 0%, #2d6cdf 100%);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #e2e2e2;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 40px;
+            display: flex;
+            gap: 40px;
+        }
+        .contact-info {
+            flex: 1;
+            padding-right: 30px;
+            border-right: 1px solid #eaeaea;
+        }
+        .contact-info h2 {
+            margin-top: 0;
+            color: #2a3b4c;
+        }
+        .contact-info p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-info li {
+            margin-bottom: 16px;
+            color: #333;
+        }
+        .contact-info li i {
+            margin-right: 10px;
+            color: #0077b6;
+        }
+        .contact-form {
+            flex: 2;
+        }
+        .contact-form h2 {
+            margin-top: 0;
+            color: #2a3b4c;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            color: #444;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cfd8dc;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #f9fbfc;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #0077b6;
+            outline: none;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .form-group .error {
+            color: #d32f2f;
+            font-size: 0.95em;
+            margin-top: 4px;
+        }
+        .submit-btn {
+            background: #0077b6;
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-weight: 700;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background: #005f8a;
+        }
+        .success-message {
+            color: #388e3c;
+            background: #e8f5e9;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .contact-info {
+                padding-right: 0;
+                border-right: none;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let valid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const subject = document.getElementById('subject');
+            const message = document.getElementById('message');
+            const errors = {
+                name: '',
+                email: '',
+                subject: '',
+                message: ''
+            };
+
+            // Name validation
+            if (name.value.trim() === '') {
+                errors.name = 'Please enter your name.';
+                valid = false;
+            }
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value.trim() === '') {
+                errors.email = 'Please enter your email.';
+                valid = false;
+            } else if (!emailPattern.test(email.value.trim())) {
+                errors.email = 'Please enter a valid email address.';
+                valid = false;
+            }
+
+            // Subject validation
+            if (subject.value.trim() === '') {
+                errors.subject = 'Please enter a subject.';
+                valid = false;
+            }
+
+            // Message validation
+            if (message.value.trim() === '') {
+                errors.message = 'Please enter your message.';
+                valid = false;
+            }
+
+            // Display errors
+            document.getElementById('error-name').textContent = errors.name;
+            document.getElementById('error-email').textContent = errors.email;
+            document.getElementById('error-subject').textContent = errors.subject;
+            document.getElementById('error-message').textContent = errors.message;
+
+            if (valid) {
+                document.getElementById('success-message').style.display = 'block';
+                event.target.reset();
+                setTimeout(() => {
+                    document.getElementById('success-message').style.display = 'none';
+                }, 4000);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>We're here to help! Reach out to us using the details below or fill out the contact form.</p>
+            <ul>
+                <li><i>📍</i>Proudly South African</li>
+                <li><i>📞</i>065 199 4305</li>
+                <li><i>✉️</i>yourdigitalco786@gmail.com</li>
+                <li><i>⏰</i>Mon-Fri: 9:00am - 6:00pm</li>
+            </ul>
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://www.tiktok.com/@yazy76" target="_blank"><i>🌐</i>TikTok</a></li>
+                <li><a href="https://www.instagram.com/__yasmin_sayed__" target="_blank"><i>🌐</i>Instagram</a></li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <div id="success-message" class="success-message">Thank you! Your message has been sent.</div>
+            <form onsubmit="validateForm(event)">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" autocomplete="name">
+                    <div id="error-name" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" autocomplete="email">
+                    <div id="error-email" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject">
+                    <div id="error-subject" class="error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message"></textarea>
+                    <div id="error-message" class="error"></div>
+                </div>
+                <button type="submit" class="submit-btn" formaction="mailto:yourdigitalco786@gmail.com">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">Momentum Online Academy</a>
+                <p class="footer-desc">Empowering individuals to unlock their full potential and achieve success through expert-led classes and training courses.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="tutors.html">Tutors</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email: <a href="mailto:yourdigitalco786@gmail.com">yourdigitalco786@gmail.com</a></li>
+                    <li>Phone: <a href="tel:0651994305">065 199 4305</a></li>
+                    <li>Location: Online Worldwide</li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://www.tiktok.com/@yazy76" target="_blank" class="social-link">
+    <i class="fab fa-tiktok"></i> TikTok
+  </a>
+                <a href="https://www.instagram.com/__yasmin_sayed__" target="_blank" class="social-link">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 Momentum Online Academy. All rights reserved.</p>
+            <p>
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+<style>
+    .site-footer {
+        background: #3a3a3a;
+        color: #000000;
+        font-size: 1rem;
+        margin-top: 2em;
+    }
+    .footer-top {
+        border-bottom: 1px solid #444;
+        padding: 2em 0 1em 0;
+    }
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2em;
+        align-items: flex-start;
+    }
+    .footer-brand .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #000000;
+        text-decoration: none;
+        margin-bottom: 0.5em;
+        display: inline-block;
+    }
+    .footer-desc {
+        margin: 0.5em 0 0 0;
+        color: #000000;
+        font-size: 0.95em;
+    }
+    .footer-links h4,
+    .footer-contact h4,
+    .footer-social h4 {
+        margin-bottom: 0.5em;
+        font-size: 1.1em;
+        color: #000000;
+    }
+    .footer-links ul,
+    .footer-contact ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .footer-links ul li,
+    .footer-contact ul li {
+        margin-bottom: 0.4em;
+    }
+    .footer-links a,
+    .footer-contact a {
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .footer-links a:hover,
+    .footer-contact a:hover {
+        color: #0078d4;
+    }
+    .footer-social {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    .footer-social .social-icon {
+        display: inline-block;
+        margin-right: 0.5em;
+        vertical-align: middle;
+    }
+    .footer-social img {
+        width: 28px;
+        height: 28px;
+        filter: brightness(0) invert(1);
+        transition: filter 0.2s;
+    }
+    .footer-social .social-icon:hover img {
+        filter: brightness(0) invert(0.5) sepia(1) hue-rotate(180deg) saturate(2);
+    }
+    .footer-bottom {
+        background: #181818;
+        padding: 1em 0;
+        text-align: center;
+        font-size: 0.95em;
+        color: #000000;
+    }
+    .footer-bottom a {
+        color: #000000;
+        text-decoration: underline;
+        margin: 0 0.3em;
+        transition: color 0.2s;
+    }
+    .footer-bottom a:hover {
+        color: #0078d4;
+    }
+    @media (max-width: 700px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5em;
+        }
+        .footer-top {
+            padding: 1.5em 0 0.5em 0;
+        }
+    }
+</style>    
+</body>
+</html>
