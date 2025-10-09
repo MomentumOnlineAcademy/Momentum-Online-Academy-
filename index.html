@@ -238,20 +238,76 @@
 
   <!-- Testimonials -->
   <section class="testimonials">
-    <div class="container">
-      <h2>What Our Students Say</h2>
-      <div class="testimonial-list">
-        <blockquote>
-          "Momentum Online Academy helped me boost my grades and confidence!"<br>
-          <span>- Alex, Grade 10</span>
-        </blockquote>
-        <blockquote>
-          "The tutors are amazing and the resources are super helpful."<br>
-          <span>- Priya, College Student</span>
-        </blockquote>
-      </div>
+  <h2>What Our Students Say</h2>
+  <div class="testimonial-container">
+    <div class="testimonial">
+      <img src="images/testimonial1.jpg" alt="Student testimonial 1">
     </div>
-  </section>
+
+    <div class="testimonial">
+      <img src="images/testimonial2.jpg" alt="Student testimonial 2">
+    </div>
+
+    <div class="testimonial">
+      <img src="images/testimonial3.jpg" alt="Student testimonial 3">
+    </div>
+  </div>
+</section>
+<style>
+.testimonials {
+  background: #f9f9ff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #77f7ff, #d46bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.testimonial-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+@media (max-width: 768px) {
+  .testimonial-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial {
+    max-width: 90%;
+  }
+}
+</style>
+
 
 <!-- Footer -->
 <footer class="site-footer">
